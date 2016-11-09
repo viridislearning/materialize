@@ -593,7 +593,8 @@ module.exports = function(grunt) {
   );
 
   grunt.registerTask('jade_compile', ['jade', 'notify:jade_compile']);
-  grunt.registerTask('js_compile', ['concat:temp', 'uglify:bin', 'notify:js_compile', 'clean:temp']);
+  grunt.registerTask('js_compile_dist', ['concat:dist', 'uglify:dist', 'notify:js_compile', 'clean:temp']); // custom task to generate dist files
+  grunt.registerTask('js_compile', ['concat:temp', 'uglify:bin', 'notify:js_compile']);
   grunt.registerTask('sass_compile', ['sass:gh', 'sass:bin', 'postcss:gh', 'postcss:bin', 'notify:sass_compile']);
   grunt.registerTask('server', ['browserSync', 'notify:server']);
   grunt.registerTask('lint', ['removelogging:source']);
